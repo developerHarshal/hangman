@@ -1,0 +1,9 @@
+<div class="word_wrapper">
+  <div>{{ hangmanService.word.hints[hangmanService.wordHintIndex] }}</div>
+  <div style="display: flex">
+    <div *ngFor="let letter of hangmanService.wordLetters" style="padding: 2px">
+      <div *ngIf="letter.selected; else showDash">{{ letter.value }}</div>
+      <ng-template #showDash>_</ng-template>
+    </div>
+  </div>
+</div>

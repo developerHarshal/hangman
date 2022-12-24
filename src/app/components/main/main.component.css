@@ -1,0 +1,21 @@
+.main_wrapper{
+    display: grid;
+    grid-template-rows: 1fr 1fr 4fr 1fr;
+    max-height: 500px;
+}
+
+.main_grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.loader{
+    display: grid;
+    height: 450px;
+    align-content: space-evenly;
+}
+
+.loader_items{
+    margin: auto;
+}

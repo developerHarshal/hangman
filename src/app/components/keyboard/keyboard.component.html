@@ -1,0 +1,30 @@
+<!-- <div *ngIf="hangmanService.wordChanged | async"> -->
+<div class="keyboard_wrapper">
+  <div *ngFor="let letter of hangmanService.lettersList">
+    <!-- <button
+      class="keyboard_item"
+      [ngClass]="{
+        'keyboard_item-invalid': letter.selected && !letter.isValid,
+        'keyboard_item-valid': letter.selected && letter.isValid
+      }"
+      (click)="onClick(letter)"
+      [disabled]="letter.selected"
+      id="key_{{ letter.value }}"
+    >
+      {{ letter.value }}
+    </button> -->
+    <button
+      class="keyboard_item"
+      [ngClass]="{
+        'keyboard_item-invalid': letter.selected && !letter.isValid,
+        'keyboard_item-valid': letter.selected && letter.isValid
+      }"
+      mat-stroked-button
+      (click)="onClick(letter)"
+    >
+      {{ letter.value }}
+    </button>
+    <!-- color="{{ letter.selected ? (letter.isValid ? 'green' : 'warn') : '' }}" -->
+  </div>
+</div>
+<!-- </div> -->

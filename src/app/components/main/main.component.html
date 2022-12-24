@@ -1,0 +1,33 @@
+<div *ngIf="hangmanService.wordChanged | async as word; else loading">
+  <ng-container *ngIf="word.value.length; else loading">
+    <div class="main_wrapper">
+      <hm-man class="main_grid-item"></hm-man>
+      <hm-word class="main_grid-item"></hm-word>
+      <hm-keyboard class="main_grid-item"></hm-keyboard>
+      <div class="main_grid-item">
+        <button
+          *ngIf="
+            this.hangmanService.word.hints.length !=
+            this.hangmanService.wordHintIndex + 1
+          "
+          style="margin-right: 10px"
+          mat-raised-button
+          color="primary"
+          (click)="getAnotherHint()"
+        >
+          Get Different Hint
+        </button>
+        <button mat-raised-button color="warn" (click)="changeWord()">
+          Shuffle word
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>
+<ng-template #loading>
+  <div class="loader">
+    <mat-spinner class="loader_items"></mat-spinner>
+    <div class="loader_break"></div>
+    <span class="loader_items">Loading</span>
+  </div>
+</ng-template>

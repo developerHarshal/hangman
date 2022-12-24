@@ -1,0 +1,36 @@
+.keyboard_wrapper{
+    /* width: 600px;
+    height: 800px; */
+    max-width: 800px;
+    /* background-color: blue; */
+    /* display: grid;
+    grid-template-columns: repeat(7, 1fr);;
+    grid-row-gap: 30px; */
+    /* align-items: center; */
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.keyboard_item{
+    padding: 10px;
+    min-width: 100px;
+    height: 50px;
+    display: grid;
+    justify-items: center;
+    cursor: pointer;
+}
+
+.keyboard_item:disabled{
+    color: black;
+    font-weight: bold
+}
+
+.keyboard_item-invalid{
+    background-color: red;
+}
+
+.keyboard_item-valid{
+    background-color: green;
+}
