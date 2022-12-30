@@ -19,6 +19,7 @@
         'keyboard_item-invalid': letter.selected && !letter.isValid,
         'keyboard_item-valid': letter.selected && letter.isValid
       }"
+      [disabled]="letter.selected"
       mat-stroked-button
       (click)="onClick(letter)"
     >
