@@ -1,5 +1,7 @@
 <h1 mat-dialog-title style="padding: 10px">{{ message }}</h1>
-<!-- <div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div> -->
+<div mat-dialog-content *ngIf="data.correctWord">
+  <b>Correct Word is:</b> {{ data.correctWord }}
+</div>
 <div mat-dialog-actions style="padding-left: 10px">
   <button mat-button mat-dialog-close (click)="onClose()">Close</button>
 </div>

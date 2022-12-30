@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 export interface DialogData {
   isSuccess: boolean;
+  correctWord?: string;
 }
 
 @Component({

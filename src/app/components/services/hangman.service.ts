@@ -79,7 +79,15 @@ export class HangmanService {
     }
 
     if (!this.word) {
-      // this.word = new Word('TEACHER', 'PROFESSION');
+      ////////////////////// STATIC WORD /////////////
+      //   this.word = new Word('TEACHER', ['PROFESSION']);
+      //   this.wordChanged.next(this.word);
+      //   this.wordLetters = [];
+      //   for (let i = 0; i < this.word.value.length; i++) {
+      //     this.wordLetters.push(new Letter(this.word.value.charAt(i)));
+      //   }
+
+      ///////////////// Actual API ///////////////////////////////////////////
       this.wordService.getWordWithHint().subscribe((word) => {
         console.log(word);
         this.word = word;
@@ -123,7 +131,7 @@ export class HangmanService {
         const dialogRef = this.dialog.open(DialogComponent, {
           width: '500px',
           height: 'auto',
-          data: { isSuccess: false },
+          data: { isSuccess: false, correctWord: this.word.value },
         });
 
         dialogRef.afterClosed().subscribe((result) => {
@@ -139,6 +147,23 @@ export class HangmanService {
   }
 
   reset() {
+    /////////////// Static WOrd //////////////////////////////////////////
+    // this.wordChanged.next(new Word('', []));
+    // this.word = new Word('TEACHER', ['PROFESSION']);
+    // this.wordChanged.next(this.word);
+
+    // this.currentErrorCount = 0;
+    // this.wordHintIndex = 0;
+    // this.lettersList.forEach((letter) => {
+    //   letter.selected = false;
+    //   letter.isValid = false;
+    // });
+    // this.wordLetters = [];
+    // for (let i = 0; i < this.word.value.length; i++) {
+    //   this.wordLetters.push(new Letter(this.word.value.charAt(i)));
+    // }
+
+    /////////////// Actual API Calls /////////////////////////
     this.wordChanged.next(new Word('', []));
     this.wordService.getWordWithHint().subscribe((word) => {
       console.log(word);
